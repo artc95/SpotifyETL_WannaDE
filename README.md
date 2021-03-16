@@ -5,3 +5,6 @@ Data Engineering Course for Beginners by Karolina Sowinska https://www.youtube.c
 - Create repository in Github
 - Clone Github repository in VSCode using Github respository URL
 - After making changes in VSCode, Stage Changes, Commit (with message), then Push
+
+(Spotify API "Get the Current User's Recently Played Tracks")
+https://developer.spotify.com/console/get-recently-played/
