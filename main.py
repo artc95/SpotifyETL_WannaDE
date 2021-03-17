@@ -3,7 +3,7 @@ import datetime
 import requests
 import pandas as pd
 
-TOKEN = "BQABhg8g6s_ZUgZfDOWHedzRW2UoqN3Om8GDvRLoYf1DO-rC74zZKovjIRJ7drqDgTIs6njNOl4Eh20Uet_l9L_6ofGCpVYUQd9rrxcDSOuelrr3t44QIBQlJezLaxyRdB1teNgKrOOCq9xunkfR9oWy4Lh8cqtv2MDPwsUU07SNoYpUj35-_Q"
+TOKEN = "BQBtrFOXFbVIad0NDgx091J5sg0e1_dkOtH4-Q99CtlXUznA1JQx9h4DCo5c5HRQaHVwn0-aE2FFE-tDhhDscHiNY0_jwX8qienV7ibd-95KyYrAIsJNfaM2v2Hq3437bA3kPvG3vFEnFRRMMuS6uCFRb24E-CqfkXb-XDnTUI-nW9vJw0tRUA"
 
 if __name__ == "__main__":
 
@@ -23,20 +23,17 @@ if __name__ == "__main__":
     song_names = []
     artist_names = []
     played_at = []
-    timestamps = []
 
     for song in data["items"]:
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at.append(song["played_at"])
-        timestamps.append(song["played_at"][0-10]) #only date, no time
 
     song_dict = {
         "song_name": song_names,
         "artist_name": artist_names,
-        "played_at": played_at,
-        "timestamp": timestamps
+        "played_at": played_at
     }
 
-    song_df = pd.DataFrame(song_dict, columns=["song_name", "artist_name", "played_at", "timestamp"])
+    song_df = pd.DataFrame(song_dict, columns=["song_name", "artist_name", "played_at"])
     print(song_df)
